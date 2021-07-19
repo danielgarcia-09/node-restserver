@@ -17,7 +17,7 @@ app.use( routes );
 
 
 // * Connecting to DB
-mongoose.connect(process.env.URLDB,{ useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true }, (err,res)=> {
+mongoose.connect(process.env.URLDB,{ useNewUrlParser : true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: true }, (err,res)=> {
 
     if( err ) throw err;
 
