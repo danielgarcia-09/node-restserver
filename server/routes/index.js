@@ -17,5 +17,6 @@ router.delete('/usuario/:id', [validarToken,verificaAdmin_Role], UsuarioControll
 
 // ? Login Routes
 router.post('/login', LoginController.login);
+router.post('/google', LoginController.google)
 
 module.exports = router;

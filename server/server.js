@@ -2,6 +2,7 @@ require('./config/config');
 
 const express = require('express');
 const mongoose = require('mongoose');
+const path = require('path');
 
 const routes = require('./routes/index');
 
@@ -11,6 +12,11 @@ const app = express();
 // * Middlewares
 app.use(express.urlencoded( {extended: false} ));
 app.use(express.json());
+
+
+app.use( express.static( path.resolve(__dirname, '../public') ) );
+
+    
 
 //  * Routes
 app.use( routes );
