@@ -7,7 +7,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 
 
 // * Caducidad token
-process.env.CADUCIDAD = '60s';
+process.env.CADUCIDAD = '1h';
 
 // * SEED token
 process.env.SEED = process.env.SEED || 'klk-wawawa';

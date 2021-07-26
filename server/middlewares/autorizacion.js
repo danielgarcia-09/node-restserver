@@ -16,7 +16,6 @@ let validarToken = (req, res, next) => {
         } 
 
         req.usuario = decoded.usuario;
-
         next();
 
     })
