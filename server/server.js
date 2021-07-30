@@ -2,10 +2,11 @@ require('./config/config');
 
 const express = require('express');
 const mongoose = require('mongoose');
+
+const fileUpload = require('express-fileupload');
 const path = require('path');
 
 const routes = require('./routes/index');
-
 
 const app = express();
 
@@ -13,10 +14,12 @@ const app = express();
 app.use(express.urlencoded( {extended: false} ));
 app.use(express.json());
 
+// * Default options to select files
+app.use( fileUpload() );
 
+// * Default view
 app.use( express.static( path.resolve(__dirname, '../public') ) );
 
-    
 
 //  * Routes
 app.use( routes );

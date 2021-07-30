@@ -12,7 +12,9 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bulma": "^0.9.3",
     "express": "^4.17.1",
+    "express-fileupload": "^1.1.10",
     "google-auth-library": "^7.3.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.2",

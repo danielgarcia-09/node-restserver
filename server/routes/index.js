@@ -2,9 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-const { validarToken, verificaAdmin_Role } = require('../middlewares/autorizacion');
+const { validarToken, verificaAdmin_Role, verificaTokenImg } = require('../middlewares/autorizacion');
 
-const { LoginController, UsuarioController, CategoriaController, ProductoController } = require('../controllers/index');
+const { LoginController, UsuarioController, CategoriaController, ProductoController, UploadController, ImagenController } = require('../controllers/index');
 
 // ? Usuario Routes
 router.get('/usuario', validarToken, UsuarioController.getAll);
@@ -39,5 +39,14 @@ router.put('/producto/:id', validarToken, ProductoController.update)
 router.delete('/producto/:id', validarToken, ProductoController.delete)
 
 
+// * ---------------------------------------------------------------------
+
+// * Upload Files Routes
+router.put('/upload/:tipo/:id', validarToken, UploadController.uploadFile);
+
+// * ---------------------------------------------------------------------
+
+//? Imagen Routes
+router.get('/imagen/:tipo/:img', verificaTokenImg, ImagenController.getImagen);
 
 module.exports = router;

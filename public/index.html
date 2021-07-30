@@ -6,18 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Sign In - Demo</title>
 
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
 
     <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta name="google-signin-client_id" content="20959007245-petfnmq2p2jfjit2b4jpeg59vqaicsrb.apps.googleusercontent.com">
+
+    <script src="https://kit.fontawesome.com/a99e877de8.js" crossorigin="anonymous"></script>
 
    
 </head>
 <body>
 
-    <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    <section class="hero is-primary is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5-tablet is-4-desktop is-3-widescreen">
+                        <form action="/login" method="POST" class="box">
+                            <div class="field">
+                                <label for="" class="label">Email</label>
+                                <div class="control has-icons-left">
+                                    <input type="email" name="email" placeholder="ej: kanedaboi_@live.es" required class="input">
+                                    <span class="icon is-small is-left">
+                                        <i class="far fa-envelope"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="" class="label">Password</label>
+                                <div class="control has-icons-left">
+                                    <input type="password" name="password" placeholder="ej: 123456 :)" required class="input">
+                                    <span class="icon is-small is-left">
+                                        <i class="fas fa-unlock-alt"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="field">
+                                <button type="submit" class="button is-success">
+                                    Login
+                                </button>
+                            </div>
+                            <div class="field has-text-centered">
+                                <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
 
-    <a href="#" onclick="signOut();">Sign out</a>
+        <a href="#" onclick="signOut();">Sign out</a>
+    
+    </section>
 
+    
 
     <script>
         function onSignIn(googleUser) {
